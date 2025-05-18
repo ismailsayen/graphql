@@ -29,7 +29,7 @@
     display: none;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 999 ;
+    z-index: 999;
 }
 
 .circle .sub {
@@ -48,7 +48,7 @@
 
 .container form {
     background-color: var(--blue);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--black) 0px 5px 15px;
     min-width: 400px;
     height: fit-content;
     padding: 10px 20px;
@@ -122,4 +122,111 @@
 .container form button:hover {
     color: white;
     background-color: var(--light-blue);
+}
+
+.notif-sec {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 350px;
+    padding: 10px 20px;
+    overflow-y: auto;
+}
+
+.succeed-toast {
+    width: 100%;
+    padding: 7px 14px;
+    display: flex;
+    background: #007435;
+    box-shadow: var(--black) 0px 5px 15px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+    transition: 08.s ease-in-out;
+}
+
+.failure-toast {
+    width: 100%;
+    padding: 7px 14px;
+    display: flex;
+    background: #ff7777;
+    box-shadow: var(--black) 0px 5px 15px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+    transition: 08.s ease-in-out;
+}
+
+.failure-toast div:first-child {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.succeed-toast div:first-child {
+    background-color: #C3DC64;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+.succeed-toast p,
+.failure-toast p {
+    color: var(--white);
+    font-size: 1em;
+}
+
+.succeed-toast div .icon-succeed {
+    width: 37px;
+    height: 37px;
+    position: relative;
+    top: 4px;
+}
+
+.failure-toast div .icon-failure {
+    width: 37px;
+    height: 37px;
+    position: relative;
+    top: 4px;
+}
+
+.succeed-toast .icon-succeed-close ,.icon-failure-close {
+    width: 37px;
+    height: 37px;
+    position: relative;
+    top: 4px;
+    float: right;
+    cursor: pointer;
+    transition: .8s ease-in-out;
+}
+
+.succeed-toast .icon-succeed-close .p1,
+.succeed-toast .icon-succeed-close .p2 {
+    fill: var(--white);
+}
+
+.succeed-toast .icon-succeed-close:hover .p1,
+.succeed-toast .icon-succeed-close:hover .p2 {
+    fill: #C3DC64;
+}
+
+.failure-toast .icon-failure-close .p1,
+.failure-toast .icon-failure-close .p2 {
+    fill: var(--white);
+}
+
+.failure-toast .icon-failure-close:hover .p1,
+.failure-toast .icon-failure-close:hover .p2 {
+    fill: red;
 }
