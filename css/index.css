@@ -44,85 +44,11 @@
     width: 100%;
     height: 100vh;
     background-color: var(--black);
+    overflow: hidden;
+    position: relative;
 }
 
-.container form {
-    background-color: var(--blue);
-    box-shadow: var(--black) 0px 5px 15px;
-    min-width: 400px;
-    height: fit-content;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.container form img {
-    width: 150px;
-}
-
-.container form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1em;
-    color: var(--white);
-
-}
-
-.container form div {
-    width: 100%;
-    margin: 5px 0;
-}
-
-.container form p {
-    color: var(--white);
-    font-size: 1.1em;
-    margin: 5px 0;
-
-    span {
-        color: var(--light-blue);
-    }
-}
-
-.container form input {
-    width: 100%;
-    border-radius: 15px;
-    border: none;
-    height: 35px;
-    background-color: var(--black);
-    padding: 7px 14px;
-    outline: none;
-    color: var(--white);
-    font-size: 1em;
-}
-
-.container form input:focus {
-    border: 1px solid var(--light-blue);
-}
-
-.container form input::placeholder {
-    font-size: 0.8em;
-}
-
-.container form button {
-    width: 100%;
-    margin: 10px 0;
-    background-color: transparent;
-    border: 1px solid var(--light-blue);
-    border-radius: 15px;
-    padding: 7px 14px;
-    cursor: pointer;
-    font-size: 1em;
-    color: var(--light-blue);
-    font-weight: bold;
-    transition: 0.5s ease-in-out;
-}
-
-.container form button:hover {
-    color: white;
-    background-color: var(--light-blue);
-}
 
 .notif-sec {
     position: absolute;
@@ -131,7 +57,7 @@
     height: 100%;
     width: 350px;
     padding: 10px 20px;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .succeed-toast {
@@ -201,7 +127,8 @@
     top: 4px;
 }
 
-.succeed-toast .icon-succeed-close ,.icon-failure-close {
+.succeed-toast .icon-succeed-close,
+.icon-failure-close {
     width: 37px;
     height: 37px;
     position: relative;

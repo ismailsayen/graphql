@@ -1,5 +1,10 @@
 export function failureToast(text) {
-    const par = document.querySelector('.notif-sec')
+    let par = document.querySelector('.notif-sec')
+    if (!par) {
+        par = document.createElement('div')
+        par.className = 'notif-sec'
+        document.body.appendChild(par)
+    }
     const toast = document.createElement('div');
     toast.className = 'failure-toast';
     toast.innerHTML = /*html*/` 
@@ -21,6 +26,9 @@ export function failureToast(text) {
     par.appendChild(toast);
     setTimeout(() => {
         toast.remove();
+        if (par.children.length == 0) {
+            par.remove()
+        }
     }, 6000);
     const closeBtn = toast.querySelector('.close');
     closeBtn.addEventListener('click', () => {

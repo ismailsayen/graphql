@@ -1,5 +1,10 @@
 export function succedToast(text) {
-    const par = document.querySelector('.notif-sec')
+    let par = document.querySelector('.notif-sec')
+    if (!par) {
+        par = document.createElement('div')
+        par.className = 'notif-sec'
+        document.body.appendChild(par)
+    }
     const toast = document.createElement('div');
     toast.className = 'succeed-toast';
     toast.innerHTML = /*html*/` 
@@ -19,7 +24,11 @@ export function succedToast(text) {
     `
     par.appendChild(toast);
     setTimeout(() => {
+
         toast.remove();
+        if (par.children.length == 0) {
+            par.remove()
+        }
     }, 3000);
     const closeBtn = toast.querySelector('.close');
     closeBtn.addEventListener('click', () => {

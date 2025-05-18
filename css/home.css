@@ -1,0 +1,114 @@
+:root {
+    --dark-blue: #0F2957;
+    --white: #FFFFFF;
+    --black: #1E242F;
+    --light-blue: #4B79BF;
+    --blue: #21304b;
+}
+
+
+.header {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--dark-blue);
+    border-bottom: 2px solid var(--light-blue);
+    box-shadow: var(--light-blue) 0px 25px 9px -20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    color: var(--white);
+
+    span {
+        color: #DE33A6;
+    }
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    fill: var(--white);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.profile-icon:hover {
+    fill: var(--light-blue);
+
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-header>p {
+    color: var(--white);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.info-header>p:hover {
+    color: red;
+    text-decoration: underline;
+
+}
+
+.user-info-section {
+    width: fit-content;
+    height: 100%;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: var(--dark-blue);
+    border-left: 2px solid var(--light-blue);
+    border-radius: 15px 0px 0px 15px;
+    transform: translateX(100%);
+    transition: transform 1s ease-in;
+    padding: 10px 20px;
+}
+
+.user-info-section>div {
+    width: 100%;
+    margin: 10px;
+    padding: 7px 14px;
+}
+
+.close {
+    text-align: end;
+}
+
+.close>svg {
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.close>svg:hover path {
+    fill: var(--light-blue);
+}
+
+.fullname {
+    color: var(--white);
+    font-size: 2em;
+}
+
+.nickname {
+    color: var(--light-blue);
+}
+
+.info-data>p {
+    font-size: 1.3em;
+    margin: 10px;
+    color: var(--white);
+    border: 1px dashed var(--light-blue);
+    padding: 7px;
+    border-radius: 8px;
+}
+.info-data>p span{
+    color: var(--light-blue);
+    font-size: 0.9em;
+    font-weight: 300;
+}
