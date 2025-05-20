@@ -1,4 +1,5 @@
 import { MoveCircle } from "../../utils/MoveCircle.js"
+import { BodyHome } from "./BodyHome.js"
 import { Header } from "./head.js"
 
 export async function displayHome() {
@@ -11,4 +12,5 @@ export async function displayHome() {
     container.removeAttribute("style")
     container.innerHTML = ""
     Header()
+    BodyHome()
 }

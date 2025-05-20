@@ -1,0 +1,31 @@
+export function BodyHome() {
+    const container = document.querySelector('.container')
+    const bodyContainer = document.createElement('div')
+    bodyContainer.className = 'body-container'
+    container.appendChild(bodyContainer)
+    SectionInfos()
+}
+
+
+function SectionInfos() {
+    const bodyContainer = document.querySelector('.body-container')
+
+    const div = document.createElement('div')
+    div.className = 'section'
+
+    div.innerHTML=/*html*/`
+        <div class="header-section">
+            <div class="icon-user">
+                <svg role="img" width="80px" height="80px" viewBox="0 0 24 24" aria-label="icon">
+                    <path fill="#4B79BF" fill-rule="evenodd" clip-rule="evenodd" d="M22.15 12c0 2.1-.63 4.05-1.72 5.67h-4.88v-1.6h4.07v-1.2h1.35V9.3h-1.35V7.77h-5.15l1.12-1.26a1.52 1.52 0 1 0-.7-.48l-1.55 1.74h-2.68L9.03 5.92a1.52 1.52 0 1 0-.65.54l1.15 1.3H4.55V9.3H3.2v5.59h1.35v1.18h4.07v1.6H3.57A10.15 10.15 0 1 1 22.15 12Zm-2.53-1.86v3.9h.5v-3.9h-.5Zm-.85-.85v-.67H5.4v6.6h13.37V9.29Zm-14.72.85h.5v3.9h-.5v-3.9ZM12 22.15c-3.13 0-5.93-1.41-7.79-3.63H19.8A10.13 10.13 0 0 1 12 22.15ZM23 12a11 11 0 1 1-22 0 11 11 0 0 1 22 0ZM9.46 16.23h5.25v1.35H9.46v-1.35Zm-.68-4.06a1.02 1.02 0 1 0 0-2.03 1.02 1.02 0 0 0 0 2.03Zm0 .85a1.86 1.86 0 1 0 0-3.73 1.86 1.86 0 0 0 0 3.73Zm7.79-1.87c0 .53-.46 1.02-1.1 1.02-.64 0-1.1-.49-1.1-1.02 0-.52.46-1.01 1.1-1.01.64 0 1.1.49 1.1 1.01Zm.85 0a1.9 1.9 0 0 1-1.95 1.87 1.9 1.9 0 0 1-1.95-1.87 1.9 1.9 0 0 1 1.95-1.86 1.9 1.9 0 0 1 1.95 1.86Zm-6.56 2.46-.16-.4-.79.3.36.94H14l.28-.98-.82-.23-.1.37h-2.5Zm-3.1-7.87a.68.68 0 1 0 0-1.36.68.68 0 0 0 0 1.36Zm8.98-.68a.68.68 0 1 1-1.36 0 .68.68 0 0 1 1.36 0Z"></path>
+                </svg>
+                <h1>Ismail SAYEN, <span>isayen.</span></h1>
+            </div>
+            <div class='more-infos'>
+                <div class="xp"><p><span>xp:</span>966</p></div>
+                <div class="level"><p><span>level:</span>29</p></div>
+            </div>
+        </div>
+    `
+    bodyContainer.appendChild(div)
+}

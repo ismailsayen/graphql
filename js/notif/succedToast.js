@@ -26,12 +26,12 @@ export function succedToast(text) {
     setTimeout(() => {
 
         toast.remove();
-        if (par.children.length == 0) {
-            par.remove()
-        }
     }, 3000);
     const closeBtn = toast.querySelector('.close');
     closeBtn.addEventListener('click', () => {
         toast.remove();
+        if (par.children.length == 0) {
+            par.remove()
+        }
     });
 }
