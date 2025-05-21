@@ -24,7 +24,9 @@ export function succedToast(text) {
     `
     par.appendChild(toast);
     setTimeout(() => {
-
+        if (par.children.length == 0) {
+            par.remove()
+        }
         toast.remove();
     }, 3000);
     const closeBtn = toast.querySelector('.close');

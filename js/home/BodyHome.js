@@ -1,3 +1,8 @@
+import { VerifyError } from "../../utils/verifyError.js"
+import { convertXPToReadable } from "../../utils/XpConcerter.js"
+import { querys } from "../gql/querys.js"
+import { GetInfo } from "./head.js"
+
 export function BodyHome() {
     const container = document.querySelector('.container')
     const bodyContainer = document.createElement('div')
@@ -7,13 +12,32 @@ export function BodyHome() {
 }
 
 
-function SectionInfos() {
+async function SectionInfos() {
     const bodyContainer = document.querySelector('.body-container')
 
     const div = document.createElement('div')
     div.className = 'section'
+    let xp = await GetInfo(querys.xp)
+    let err = VerifyError(xp)
+    if (err === false) {
+        return
+    }
+    xp = convertXPToReadable(xp.data.transaction_aggregate.aggregate.sum.amount)
+    let level = await GetInfo(querys.level)
+    err = VerifyError(xp)
+    if (err === false) {
+        return
+    }
+    level = level.data.transaction[0].amount;
+    let lastTwoProjects = await GetInfo(querys.lastTwoProject)
+    err = VerifyError(xp)
+    if (err === false) {
+        return
+    }
 
-    div.innerHTML=/*html*/`
+    lastTwoProjects = lastTwoProjects.data.transaction.reverse()
+    
+    div.innerHTML =/*html*/`
         <div class="header-section">
             <div class="icon-user">
                 <svg role="img" width="80px" height="80px" viewBox="0 0 24 24" aria-label="icon">
@@ -22,9 +46,18 @@ function SectionInfos() {
                 <h1>Ismail SAYEN, <span>isayen.</span></h1>
             </div>
             <div class='more-infos'>
-                <div class="xp"><p><span>xp:</span>966</p></div>
-                <div class="level"><p><span>level:</span>29</p></div>
+                <div class="xp"><span>xp:</span><h1>${xp}</h1></div>
+                <div class="level"><span>level:</span><h1>${level}</h1></div>
             </div>
+        </div>
+        <div class="last-two-projects">
+            ${lastTwoProjects.map(ele =>/*html*/`
+                <div class="project">
+                    
+                    <h4><span>name:</span> ${ele.object.name}, <span>xp: </span> ${convertXPToReadable(ele.amount)}</h4>
+                </div>
+                `).join('')
+            }
         </div>
     `
     bodyContainer.appendChild(div)

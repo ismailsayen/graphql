@@ -158,12 +158,7 @@
     align-items: center;
 }
 
-.header-section .more-infos div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: Arial, sans-serif;
-}
+
 
 .header-section .more-infos span {
     color: var(--light-blue);
@@ -177,4 +172,10 @@
     font-size: 22px;
     font-weight: bold;
     margin: 0;
+}
+.header-section .more-infos .level,
+.header-section .more-infos .xp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

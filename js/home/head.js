@@ -1,5 +1,6 @@
+import { VerifyError } from "../../utils/verifyError.js"
 import { LogOut } from "../auth/logOut.js"
-import { UserInfos } from "../gql/querys.js"
+import { querys } from "../gql/querys.js"
 import { failureToast } from "../notif/failureToast.js"
 
 export function Header() {
@@ -29,21 +30,10 @@ async function ProfileSection() {
         userInfoSec.style.transform = 'translate(0)'
         return
     }
-    const data = await GetInfo(UserInfos())
-    if (!data) {
-        failureToast('Error while fetch data please try later.')
+    const data = await GetInfo(querys.infosUser)
+    let err = VerifyError(data)
+    if (err===false) {
         return
-    }
-
-    if (data.errors && Array.isArray(data.errors)) {
-        const jwtError = data.errors.find(
-            (err) => err.extensions?.code === 'invalid-jwt'
-        );
-        if (jwtError) {
-            failureToast('Looks like you need to log in again. Catch you later!');
-            LogOut()
-            return;
-        }
     }
     let login = data.data.user[0].login
     let info = data.data.user[0].attrs

@@ -26,6 +26,9 @@ export function failureToast(text) {
     par.appendChild(toast);
     setTimeout(() => {
         toast.remove();
+        if (par.children.length == 0) {
+            par.remove()
+        }
     }, 6000);
     const closeBtn = toast.querySelector('.close');
     closeBtn.addEventListener('click', () => {
