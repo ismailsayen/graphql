@@ -183,24 +183,82 @@
   margin: 5px 0;
   display: flex;
   align-items: center;
-  width: 450px;
+  width: 50%;
   border-radius: 8px;
   border: 1px solid var(--light-blue);
   gap: 10px;
 }
 .project .ic {
-  background-color: #c3dc64;
+  background-color: var(--light-blue);
   border-radius: 50%;
 }
-.project h3{
-    color: var(--white);
+.project h3 {
+  color: var(--white);
 }
-.project>.info-projects{
-    color: var(--light-blue);
+.project > .info-projects {
+  color: var(--light-blue);
 }
 .project div .icon-succeed {
   width: 37px;
   height: 37px;
   position: relative;
   top: 4px;
+}
+.project div .icon-succeed path {
+  fill: var(--blue);
+}
+/* audits */
+.audit-sec {
+  border-radius: 8px;
+  display: flex;
+  margin: 10px 0;
+  width: 100%;
+}
+.historyAudit{
+  background-color: var(--dark-blue);
+  border-radius: 8px;
+  padding: 7px 14px;
+  box-shadow: var(--light-blue) 0px 1px 3px 0px;
+  width: 50%;
+}
+.audit-sec .historyAudit h1 {
+  color: var(--light-blue);
+  margin-bottom: 30px;
+  font-size: 1em;
+}
+
+.audit-sec .historyAudit .audit-ratio {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: var(--white);
+}
+.audit-sec .historyAudit .group-audit{
+  width: 100%;
+  height: 80px;
+  background: red;  
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+.audit-sec .historyAudit .audit-item {
+  background: #f8f9fa;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border-left: 4px solid #ddd;
+}
+
+.audit-sec .historyAudit .succeeded {
+  color: green;
+  border-left-color: green;
+}
+
+.audit-sec .historyAudit .failed {
+  color: red;
+  border-left-color: red;
+}
+
+.audit-sec .historyAudit .audit-info {
+  font-size: 1.1em;
+  font-weight: bold;
 }

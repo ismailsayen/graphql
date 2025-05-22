@@ -1,14 +1,16 @@
 import { VerifyError } from "../../utils/verifyError.js";
 import { convertXPToReadable } from "../../utils/XpConcerter.js";
 import { querys } from "../gql/querys.js";
+import { AuditsSect } from "./AuditsSect.js";
 import { GetInfo } from "./head.js";
 
-export function BodyHome() {
+export async function BodyHome() {
   const container = document.querySelector(".container");
   const bodyContainer = document.createElement("div");
   bodyContainer.className = "body-container";
   container.appendChild(bodyContainer);
-  SectionInfos();
+  await SectionInfos();
+  await AuditsSect();
 }
 
 async function SectionInfos() {

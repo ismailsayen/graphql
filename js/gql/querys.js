@@ -36,5 +36,24 @@ export const querys = {
       type
     }
   }
+}`,
+auditInfo:` {
+  user{
+    auditRatio
+    
+    audits(where:{closureType:{_in:[succeeded, failed]}}){
+      closureType
+      
+      group{
+        captainLogin
+        createdAt
+        pathByPath{
+          object{
+            name
+          }
+        }
+      }
+    }
+  }
 }`
 }
