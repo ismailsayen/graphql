@@ -44,7 +44,7 @@
     width: 100%;
     height: 100vh;
     background-color: var(--black);
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 

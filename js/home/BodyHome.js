@@ -1,43 +1,42 @@
-import { VerifyError } from "../../utils/verifyError.js"
-import { convertXPToReadable } from "../../utils/XpConcerter.js"
-import { querys } from "../gql/querys.js"
-import { GetInfo } from "./head.js"
+import { VerifyError } from "../../utils/verifyError.js";
+import { convertXPToReadable } from "../../utils/XpConcerter.js";
+import { querys } from "../gql/querys.js";
+import { GetInfo } from "./head.js";
 
 export function BodyHome() {
-    const container = document.querySelector('.container')
-    const bodyContainer = document.createElement('div')
-    bodyContainer.className = 'body-container'
-    container.appendChild(bodyContainer)
-    SectionInfos()
+  const container = document.querySelector(".container");
+  const bodyContainer = document.createElement("div");
+  bodyContainer.className = "body-container";
+  container.appendChild(bodyContainer);
+  SectionInfos();
 }
 
-
 async function SectionInfos() {
-    const bodyContainer = document.querySelector('.body-container')
+  const bodyContainer = document.querySelector(".body-container");
 
-    const div = document.createElement('div')
-    div.className = 'section'
-    let xp = await GetInfo(querys.xp)
-    let err = VerifyError(xp)
-    if (err === false) {
-        return
-    }
-    xp = convertXPToReadable(xp.data.transaction_aggregate.aggregate.sum.amount)
-    let level = await GetInfo(querys.level)
-    err = VerifyError(xp)
-    if (err === false) {
-        return
-    }
-    level = level.data.transaction[0].amount;
-    let lastTwoProjects = await GetInfo(querys.lastTwoProject)
-    err = VerifyError(xp)
-    if (err === false) {
-        return
-    }
+  const div = document.createElement("div");
+  div.className = "section";
+  let xp = await GetInfo(querys.xp);
+  let err = VerifyError(xp);
+  if (err === false) {
+    return;
+  }
+  xp = convertXPToReadable(xp.data.transaction_aggregate.aggregate.sum.amount);
+  let level = await GetInfo(querys.level);
+  err = VerifyError(xp);
+  if (err === false) {
+    return;
+  }
+  level = level.data.transaction[0].amount;
+  let lastTwoProjects = await GetInfo(querys.lastTwoProject);
+  err = VerifyError(xp);
+  if (err === false) {
+    return;
+  }
 
-    lastTwoProjects = lastTwoProjects.data.transaction.reverse()
-    
-    div.innerHTML =/*html*/`
+  lastTwoProjects = lastTwoProjects.data.transaction.reverse();
+
+  div.innerHTML = /*html*/ `
         <div class="header-section">
             <div class="icon-user">
                 <svg role="img" width="80px" height="80px" viewBox="0 0 24 24" aria-label="icon">
@@ -51,14 +50,24 @@ async function SectionInfos() {
             </div>
         </div>
         <div class="last-two-projects">
-            ${lastTwoProjects.map(ele =>/*html*/`
+            ${lastTwoProjects
+              .map(
+                (ele) => /*html*/ `
                 <div class="project">
-                    
-                    <h4><span>name:</span> ${ele.object.name}, <span>xp: </span> ${convertXPToReadable(ele.amount)}</h4>
-                </div>
-                `).join('')
-            }
+                    <div class="ic">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-succeed" viewBox="0 0 32 40" x="0px" y="0px">
+                            <g data-name="Layer 2"><path fill="#007435" d="M10.455,26.634c.037.024.078.039.115.061a2.9,2.9,0,0,0,.4.213c.057.023.117.033.175.053a3.092,3.092,0,0,0,.381.113,2.7,2.7,0,0,0,1.536-.113c.059-.019.12-.03.177-.053a2.932,2.932,0,0,0,.4-.208c.041-.024.085-.04.125-.066a3.067,3.067,0,0,0,.466-.381l1.414-1.414L29.08,11.4a3,3,0,0,0,0-4.243L27.666,5.747a3,3,0,0,0-4.243,0L12.11,17.061,8.575,13.525a3.08,3.08,0,0,0-4.243,0L2.917,14.939a3.007,3.007,0,0,0,0,4.243l7.071,7.071A3.016,3.016,0,0,0,10.455,26.634ZM24.837,7.161a1,1,0,0,1,1.415,0l1.414,1.414a1,1,0,0,1,0,1.413L14.005,23.651l-1.189,1.188a1.029,1.029,0,0,1-1.414,0L9.281,22.718Zm-20.8,9.9a.989.989,0,0,1,.291-.707l1.414-1.415a1.029,1.029,0,0,1,1.414,0L10.7,18.475,7.867,21.3,4.332,17.768A.992.992,0,0,1,4.041,17.061Z" /></g>
+                        </svg>
+                    </div>
+                        <div class="info-projects">
+                            <div><h3>${ele.object.name}</h3></div>
+                            <div class="xp">${convertXPToReadable(ele.amount)}</div> 
+                        </div>
+                    </div>
+                `
+              )
+              .join("")}
         </div>
-    `
-    bodyContainer.appendChild(div)
+    `;
+  bodyContainer.appendChild(div);
 }
