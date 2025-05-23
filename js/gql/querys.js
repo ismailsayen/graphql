@@ -1,5 +1,5 @@
 export const querys = {
-    infosUser: `
+  infosUser: `
     {
         user{
             login
@@ -7,7 +7,7 @@ export const querys = {
         }
     }
     `,
-    xp: `{
+  xp: `{
  transaction_aggregate(where:{type:{_eq:"xp"},eventId:{_eq:41}}){
   aggregate{
     sum{
@@ -16,7 +16,7 @@ export const querys = {
   }
 }
 }`,
-    level: `{
+  level: `{
   transaction(
     where: { type: { _eq: "level" }, eventId: { _eq: 41 } }
     order_by: { id: desc }
@@ -25,7 +25,7 @@ export const querys = {
     amount
   }
 }`,
-    lastTwoProject: `{
+  lastTwoProject: `{
   transaction(where:{type:{_eq:"xp"},eventId:{_eq:41}}
    order_by: { id: desc }
      limit: 2
@@ -37,16 +37,15 @@ export const querys = {
     }
   }
 }`,
-auditInfo:` {
+  auditInfo: `{
   user{
     auditRatio
     
     audits(where:{closureType:{_in:[succeeded, failed]}}){
       closureType
-      
+      createdAt
       group{
         captainLogin
-        createdAt
         pathByPath{
           object{
             name
@@ -54,6 +53,14 @@ auditInfo:` {
         }
       }
     }
+  }
+}`,
+  user: `
+{
+  user{
+    login
+    lastName
+    firstName
   }
 }`
 }

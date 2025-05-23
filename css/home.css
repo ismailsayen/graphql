@@ -43,13 +43,13 @@
   gap: 15px;
 }
 
-.info-header > p {
+.info-header>p {
   color: var(--white);
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 
-.info-header > p:hover {
+.info-header>p:hover {
   color: red;
   text-decoration: underline;
 }
@@ -68,7 +68,7 @@
   padding: 10px 20px;
 }
 
-.user-info-section > div {
+.user-info-section>div {
   width: 100%;
   margin: 10px;
   padding: 7px 14px;
@@ -78,12 +78,12 @@
   text-align: end;
 }
 
-.close > svg {
+.close>svg {
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
 
-.close > svg:hover path {
+.close>svg:hover path {
   fill: var(--light-blue);
 }
 
@@ -96,7 +96,7 @@
   color: var(--light-blue);
 }
 
-.info-data > p {
+.info-data>p {
   font-size: 1.3em;
   margin: 10px;
   color: var(--white);
@@ -105,7 +105,7 @@
   border-radius: 8px;
 }
 
-.info-data > p span {
+.info-data>p span {
   color: var(--light-blue);
   font-size: 0.9em;
   font-weight: 300;
@@ -166,17 +166,20 @@
   font-weight: bold;
   margin: 0;
 }
+
 .header-section .more-infos .level,
 .header-section .more-infos .xp {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 /* projects */
 .last-two-projects {
   display: flex;
   gap: 10px;
 }
+
 .project {
   background-color: var(--blue);
   padding: 7px 14px;
@@ -188,43 +191,53 @@
   border: 1px solid var(--light-blue);
   gap: 10px;
 }
+
 .project .ic {
   background-color: var(--light-blue);
   border-radius: 50%;
 }
+
 .project h3 {
   color: var(--white);
 }
-.project > .info-projects {
+
+.project>.info-projects {
   color: var(--light-blue);
 }
+
 .project div .icon-succeed {
   width: 37px;
   height: 37px;
   position: relative;
   top: 4px;
 }
+
 .project div .icon-succeed path {
   fill: var(--blue);
 }
+
 /* audits */
 .audit-sec {
   border-radius: 8px;
   display: flex;
   margin: 10px 0;
   width: 100%;
+  gap: 10px;
 }
-.historyAudit{
+
+.historyAudit {
   background-color: var(--dark-blue);
   border-radius: 8px;
   padding: 7px 14px;
   box-shadow: var(--light-blue) 0px 1px 3px 0px;
   width: 50%;
 }
+
 .audit-sec .historyAudit h1 {
   color: var(--light-blue);
-  margin-bottom: 30px;
-  font-size: 1em;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+  text-align: center;
 }
 
 .audit-sec .historyAudit .audit-ratio {
@@ -232,14 +245,16 @@
   font-weight: bold;
   color: var(--white);
 }
-.audit-sec .historyAudit .group-audit{
+
+.audit-sec .historyAudit .group-audit {
   width: 100%;
   height: 80px;
-  background: red;  
+  background: red;
   overflow-y: auto;
   border-radius: 8px;
   padding: 5px 10px;
 }
+
 .audit-sec .historyAudit .audit-item {
   background: #f8f9fa;
   padding: 15px;
@@ -248,17 +263,104 @@
   border-left: 4px solid #ddd;
 }
 
+.audit-sec .historyAudit .audit-list {
+  padding: 5px 10px;
+  background-color: var(--blue);
+  border-radius: 8px;
+  max-height: 285px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
 .audit-sec .historyAudit .succeeded {
-  color: green;
-  border-left-color: green;
+  color: #a8eda8;
+  border-left-color: #a8eda8;
+  background-color: var(--dark-blue);
 }
 
 .audit-sec .historyAudit .failed {
   color: red;
   border-left-color: red;
+  background-color: var(--dark-blue);
 }
 
 .audit-sec .historyAudit .audit-info {
-  font-size: 1.1em;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.audit-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.audit-list::-webkit-scrollbar-track {
+  background: var(--black);
+  border-radius: 6px;
+}
+
+.audit-list::-webkit-scrollbar-thumb {
+  background: var(--light-blue);
+  border-radius: 6px;
+  border: 2px solid #0f2957;
+}
+
+.audit-list::-webkit-scrollbar-thumb:hover {
+  background: #5a87c7;
+}
+
+.audit-sec .Graph {
+  background-color: var(--dark-blue);
+  border-radius: 8px;
+  padding: 7px 14px;
+  box-shadow: var(--light-blue) 0px 1px 3px 0px;
+  width: 50%;
+
+}
+
+.audit-sec .Graph h1 {
+  color: var(--light-blue);
+  margin-bottom: 15px;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.audit-sec .Graph .perCentAudit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.audit-sec .Graph .perCentAudit .perSucced,
+.audit-sec .Graph .perCentAudit .perFailed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.audit-sec .Graph .perCentAudit .perSucced div {
+  height: 15px;
+  width: 15px;
+  background: var(--light-blue);
+  border-radius: 2px;
+}
+
+.audit-sec .Graph .perCentAudit .perFailed div {
+  height: 15px;
+  width: 15px;
+  background: red;
+  border-radius: 2px;
+}
+
+.audit-sec .Graph .perCentAudit .perSucced .per {
+  font-size: 1.2em;
+  color: var(--white);
+  font-weight: bold;
+
+}
+
+.audit-sec .Graph .perCentAudit .perFailed .per {
+  font-size: 1.2em;
+  color: red;
   font-weight: bold;
 }
