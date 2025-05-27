@@ -11,6 +11,7 @@ export async function BodyHome() {
   container.appendChild(bodyContainer);
   await SectionInfos();
   await AuditsSect();
+  await ProgressSect()
 }
 
 async function SectionInfos() {
@@ -53,7 +54,7 @@ async function SectionInfos() {
                 <h1>${headInfo.firstName} ${headInfo.lastName}, <span>${headInfo.login}.</span></h1>
             </div>
             <div class='more-infos'>
-                <div class="xp"><span>xp:</span><h1>${xp}</h1></div>
+                <div class="level"><span>xp:</span><h1>${xp}</h1></div>
                 <div class="level"><span>level:</span><h1>${level}</h1></div>
             </div>
         </div>

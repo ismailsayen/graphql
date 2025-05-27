@@ -167,10 +167,9 @@
   margin: 0;
 }
 
-.header-section .more-infos .level,
-.header-section .more-infos .xp {
+.header-section .more-infos .level {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 20px;
 }
 
