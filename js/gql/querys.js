@@ -26,7 +26,7 @@ export const querys = {
   }
 }`,
   lastTwoProject: `{
-  transaction(where:{type:{_eq:"xp"},eventId:{_eq:41}}
+  transaction(where:{type:{_eq:"xp"},eventId:{_eq:41},amount:{_gt:0}}
    order_by: { id: desc }
      limit: 2
   ){
@@ -38,17 +38,21 @@ export const querys = {
   }
 }`,
   auditInfo: `{
-  user{
+  user {
     auditRatio
-    
-    audits(where:{closureType:{_in:[succeeded, failed]}}){
+    audits(
+      where: {closureType: {_in: [succeeded, failed]}, group: {eventId: {_eq: 41}}},
+      order_by :{createdAt: desc}
+    ) {
       closureType
       createdAt
-      group{
+      group {
+        eventId
         captainLogin
-        pathByPath{
-          object{
+        pathByPath {
+          object {
             name
+            type
           }
         }
       }

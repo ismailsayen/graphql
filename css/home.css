@@ -364,3 +364,13 @@
   color: red;
   font-weight: bold;
 }
+
+.audit-sec .Graph .drawing {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.audit-sec .Graph .drawing .circle-graph .succeed{
+  fill: var(--light-blue);
+}

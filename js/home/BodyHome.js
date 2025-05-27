@@ -23,7 +23,7 @@ async function SectionInfos() {
   if (err === false) {
     return;
   }
-  headInfo=headInfo.data.user[0]
+  headInfo = headInfo.data.user[0]
   let xp = await GetInfo(querys.xp);
   err = VerifyError(xp);
   if (err === false) {
@@ -41,8 +41,8 @@ async function SectionInfos() {
   if (err === false) {
     return;
   }
-  
-  lastTwoProjects = lastTwoProjects.data.transaction.reverse();
+
+  lastTwoProjects = lastTwoProjects.data.transaction
 
   div.innerHTML = /*html*/ `
         <div class="header-section">
