@@ -77,7 +77,7 @@ function GraphAUdits(history = []) {
     xmlns="http://www.w3.org/2000/svg"
     class="circle-graph"
     viewBox="0 0 70 70"
-    style="width: 60%; height: auto;"
+    style="height: auto;"
     preserveAspectRatio='xMidYMid meet'
     >
       <circle r="35" cx="35" cy="35" class="succeed" />

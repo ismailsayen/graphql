@@ -380,7 +380,137 @@
   border-radius: 8px;
   padding: 7px 14px;
   box-shadow: var(--light-blue) 0px 1px 3px 0px;
-  h1{
+
+  h1 {
     color: var(--light-blue);
+  }
+}
+
+.audit-sec .Graph .drawing svg {
+  width: 40%;
+}
+
+@media screen and (max-width:1270px) {
+  .icon-user {
+    font-size: 16px;
+  }
+
+  .icon-user svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header-section .more-infos .level {
+    gap: 10px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .header-section .more-infos .level h1 {
+    font-size: 25px;
+
+  }
+
+  .audit-sec .Graph .drawing svg {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width:1050px) {
+  .icon-user {
+    font-size: 14px;
+  }
+
+  .icon-user svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .audit-sec .historyAudit h1 {
+    font-size: 1.1em;
+
+  }
+
+  .audit-sec .historyAudit .audit-list {
+    padding: 2px 4px
+  }
+
+  .audit-sec .historyAudit .audit-item {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .audit-sec .Graph .drawing svg {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:930px) {
+  .header-section h1 {
+    font-size: 20px;
+  }
+
+  .audit-sec .Graph .drawing svg {
+    width: 75%;
+  }
+
+  .header-section .more-infos .level h1 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .header-section {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .body-container {
+    width: 100%;
+  }
+
+  .audit-sec {
+    flex-wrap: wrap;
+  }
+
+  .historyAudit {
+    width: 100%;
+  }
+
+  .audit-sec .Graph {
+    width: 100%;
+  }
+
+  .audit-sec .Graph .drawing svg {
+    width: 40% ;
+  }
+  /* .last-two-projects{
+    flex-wrap: wrap;
+  } */
+}
+
+@media screen and (max-width:600px) {
+ .last-two-projects{
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .project {
+   width: 100%;
+   padding: 4px 8px;
+  }
+  .audit-sec .Graph .perCentAudit .perSucced .per,
+  .audit-sec .Graph .perCentAudit .perFailed .per{
+    font-size: 1em;
+  }
+}
+@media screen and (max-width:425px) {
+  .project div .icon-succeed {
+    width: 30px;
+    height: 30px;
+  }
+  .project h3 {
+    font-size: 16px;
   }
 }

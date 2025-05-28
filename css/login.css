@@ -6,12 +6,22 @@
     --blue: #21304b;
 }
 
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .container form {
     background-color: var(--blue);
     box-shadow: var(--black) 0px 5px 15px;
     min-width: 400px;
+    max-width: 500px;
+    width: 100%;
     height: fit-content;
-    padding: 10px 20px;
+    padding: 20px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -20,6 +30,8 @@
 
 .container form img {
     width: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .container form label {
@@ -27,7 +39,6 @@
     margin-bottom: 5px;
     font-size: 1em;
     color: var(--white);
-
 }
 
 .container form div {
@@ -39,10 +50,11 @@
     color: var(--white);
     font-size: 1.1em;
     margin: 5px 0;
+    text-align: center;
+}
 
-    span {
-        color: var(--light-blue);
-    }
+.container form p span {
+    color: var(--light-blue);
 }
 
 .container form input {
@@ -55,6 +67,7 @@
     outline: none;
     color: var(--white);
     font-size: 1em;
+    box-sizing: border-box;
 }
 
 .container form input:focus {
@@ -71,15 +84,123 @@
     background-color: transparent;
     border: 1px solid var(--light-blue);
     border-radius: 15px;
-    padding: 7px 14px;
+    padding: 12px 14px;
     cursor: pointer;
     font-size: 1em;
     color: var(--light-blue);
     font-weight: bold;
     transition: 0.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .container form button:hover {
     color: white;
     background-color: var(--light-blue);
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .container form {
+        min-width: 300px;
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .container form img {
+        width: 120px;
+    }
+    
+    .container form p {
+        font-size: 1em;
+    }
+    
+    .container form label {
+        font-size: 0.9em;
+    }
+    
+    .container form input {
+        height: 40px;
+        font-size: 0.9em;
+    }
+    
+    .container form button {
+        padding: 10px 14px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .container form {
+        min-width: 280px;
+        padding: 15px 10px;
+        margin: 5px;
+        border-radius: 6px;
+    }
+    
+    .container form img {
+        width: 100px;
+    }
+    
+    .container form p {
+        font-size: 0.9em;
+    }
+    
+    .container form label {
+        font-size: 0.8em;
+        margin-bottom: 3px;
+    }
+    
+    .container form div {
+        margin: 3px 0;
+    }
+    
+    .container form input {
+        height: 38px;
+        font-size: 0.8em;
+        padding: 5px 12px;
+        border-radius: 12px;
+    }
+    
+    .container form input::placeholder {
+        font-size: 0.7em;
+    }
+    
+    .container form button {
+        padding: 8px 12px;
+        font-size: 0.8em;
+        border-radius: 12px;
+        margin: 8px 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .container form {
+        min-width: 260px;
+        padding: 10px;
+    }
+    
+    .container form img {
+        width: 80px;
+    }
+    
+    .container form p {
+        font-size: 0.8em;
+    }
+    
+    .container form input {
+        height: 35px;
+        padding: 4px 10px;
+    }
+    
+    .container form button {
+        padding: 6px 10px;
+    }
 }
