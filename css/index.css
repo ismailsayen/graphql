@@ -16,29 +16,7 @@
 
 }
 
-.circle {
-    width: 60px;
-    height: 60px;
-    border: 1.5px solid var(--light-blue);
-    position: absolute;
-    top: 0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 999;
-}
 
-.circle .sub {
-    width: 8px;
-    height: 8px;
-    background-color: var(--light-blue);
-    border-radius: 50%;
-    pointer-events: none;
-}
 
 .container {
     width: 100%;

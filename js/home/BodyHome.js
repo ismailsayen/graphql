@@ -3,6 +3,7 @@ import { convertXPToReadable } from "../../utils/XpConcerter.js";
 import { querys } from "../gql/querys.js";
 import { AuditsSect } from "./AuditsSect.js";
 import { GetInfo } from "./head.js";
+import { ProgressSect } from "./ProgressSect.js";
 
 export async function BodyHome() {
   const container = document.querySelector(".container");

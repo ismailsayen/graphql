@@ -1,10 +1,8 @@
-import { MoveCircle } from "../../utils/MoveCircle.js";
 import { displayHome } from "../home/displayHome.js";
 import { failureToast } from "../notif/failureToast.js";
 import { succedToast } from "../notif/succedToast.js";
 
 export function LoginForm() {
-    removeEventListener('mousemove', MoveCircle)
     const link = document.getElementById('css-link')
     if (link) {
         link.href = "/css/login.css"

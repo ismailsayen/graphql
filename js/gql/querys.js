@@ -66,5 +66,16 @@ export const querys = {
     lastName
     firstName
   }
+}`,
+  skills: `{
+  transaction(
+    where: {
+      type: {_ilike: "%skill%"}
+    }
+    order_by: {amount: desc}
+  ) {
+    type
+    amount
+  }
 }`
 }

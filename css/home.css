@@ -114,8 +114,7 @@
 
 /* body cntainer */
 .body-container {
-  width: 85%;
-  height: 100%;
+  width: 70%;
   margin: 10px auto;
   padding: 15px 20px;
 }
@@ -370,6 +369,18 @@
   padding: 10px 0;
   margin-top: 10px;
 }
-.audit-sec .Graph .drawing .circle-graph .succeed{
+
+.audit-sec .Graph .drawing .circle-graph .succeed {
   fill: var(--light-blue);
+}
+
+/* progress-graph */
+.body-container .progress-graph {
+  background-color: var(--dark-blue);
+  border-radius: 8px;
+  padding: 7px 14px;
+  box-shadow: var(--light-blue) 0px 1px 3px 0px;
+  h1{
+    color: var(--light-blue);
+  }
 }
