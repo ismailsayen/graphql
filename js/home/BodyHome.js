@@ -1,6 +1,8 @@
 import { VerifyError } from "../../utils/verifyError.js";
 import { convertXPToReadable } from "../../utils/XpConcerter.js";
+import { LogOut } from "../auth/logOut.js";
 import { querys } from "../gql/querys.js";
+import { failureToast } from "../notif/failureToast.js";
 import { AuditsSect } from "./AuditsSect.js";
 import { GetInfo } from "./head.js";
 import { ProgressSect } from "./ProgressSect.js";
@@ -37,6 +39,11 @@ async function SectionInfos() {
   if (err === false) {
     return;
   }
+  if (!level.data.transaction[0]) {
+    LogOut()
+    failureToast("We don't have any information about you")
+  }
+
   level = level.data.transaction[0].amount;
   let lastTwoProjects = await GetInfo(querys.lastTwoProject);
   err = VerifyError(xp);

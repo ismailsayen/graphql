@@ -129,7 +129,6 @@ function DrawGraph(skills = []) {
 
             svg.appendChild(bar);
 
-
             let valueText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             valueText.setAttribute('x', x + barWidth / 2);
             valueText.setAttribute('y', y - 5);

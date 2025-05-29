@@ -52,12 +52,12 @@ async function ProfileSection() {
                 <p class="nickname">#${login}</p>
             </div>
             <div class="info-data">
-                <p><span>Email:</span> ${info.email}</p>
-                <p><span>Phone Number:</span> ${info.tel}</p>
-                <p><span>Scholar Level:</span> ${info.scholarLevel}</p>
-                <p><span>Gender:</span> ${info.gender}</p>
-                <p><span>City:</span> ${info.addressCity}</p>
-                <p><span>Country:</span> ${info.country}</p>
+                <p><span>Email:</span> ${info.email || "--"}</p>
+                <p><span>Phone Number:</span> ${info.tel || "--"}</p>
+                <p><span>Scholar Level:</span> ${info.scholarLevel || "--"}</p>
+                <p><span>Gender:</span> ${info.gender || "--"}</p>
+                <p><span>City:</span> ${info.addressCity || "--"}</p>
+                <p><span>Country:</span> ${info.country || "--"}</p>
             </div>
         `
     container.appendChild(userInfoSec)
